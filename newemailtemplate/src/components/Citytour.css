@@ -1,0 +1,23 @@
+.cityLogo{
+    width: 45px;
+    height: 57px;
+    margin: 5px;
+}
+.para{
+    font-size: 8px;
+    color: gray;
+    text-align: left;
+}
+.cityTour{
+    display: flex;
+    width: 33%;
+    border: 1px solid #edeaea;
+    height: 69px;
+    border-radius: 5px;
+    background: white
+}
+.tourHeading{
+   text-align: left;
+   margin-top: 5px;
+   font-weight: bold
+}

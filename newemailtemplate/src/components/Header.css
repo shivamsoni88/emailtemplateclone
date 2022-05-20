@@ -1,0 +1,37 @@
+/* width="131px"
+        style="max-width: 131px;" */
+.imgLogo{
+    width: 60px;
+    max-width: 131px;
+    height: 17px;
+}
+.header{
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+}
+.signupbtn{
+    background: #089ad5;
+    border: 1px;
+    border-radius: 3px;
+    color: white;
+    width: 61px;
+    height: 26px;
+}
+.hrline{
+    color: white;
+}
+.mainCityComponent{
+    width: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: f;
+    justify-content: center;
+    align-items: center;
+}
+.touristHeading{
+    width: 33%;
+    margin: auto;
+    font-weight: bold;
+}
+
