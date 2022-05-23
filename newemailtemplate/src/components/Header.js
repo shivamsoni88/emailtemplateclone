@@ -13,11 +13,13 @@ const header = () => {
         />
         <button className="signupbtn">sign up</button>
       </div>
-      <hr className="hrline" />
 
-      <div className="touristHeading">Schedule Your Tours And Activities</div>
-      <div className="mainCityComponent">
-        <Citytour />
+      <div className="abcd">
+        <hr className="hrline" />
+        <div className="touristHeading">Schedule Your Tours And Activities</div>
+        <div className="mainCityComponent">
+          <Citytour />
+        </div>
       </div>
     </div>
   );

@@ -1,8 +1,11 @@
+.middleComponent{
+    background-color: #fdfdfd;
+}
 .middlePart{
     margin: auto;
-    width: 33%;
+    width: 37%;
     border: 1px solid #edeaea;
-     height: 392px;
+     height: 100%;
     border-radius: 5px;
     background: white;
 }
@@ -17,20 +20,145 @@
 .startingTime{
     margin-left: 13px;
     font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+}
+.availableTime{
+    width: 48%;
+    margin-top: 13px;
 }
 .totalCompoPart{
     display: flex;
 }
 .grid-container {
     display: grid;
-    grid-template-columns: auto auto auto;
-    background-color: #2196F3;
+    grid-template-columns: 50px 50px 50px 50px;
+     /* background-color: #2196F3;  */
     padding: 10px;
-  }
+    grid-template-rows: 50px 50px 50px 50px;
+    column-gap: 18px
+}
+
   .grid-item {
-    background-color: rgba(255, 255, 255, 0.8);
-    border: 1px solid rgba(0, 0, 0, 0.8);
-    padding: 20px;
-    font-size: 30px;
+   background-color: rgba(255, 255, 255, 0.8);
+   border: 1px solid rgb(215 206 206 / 80%);
+    /*  padding: 20px;  */
+    font-size: 13px;
     text-align: center;
+    border-radius: 6px;
+    height: 24px;
+    width: 100%;
   }
+  .grid-item1 {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgb(215 206 206 / 80%);
+    /* / padding: 0px; / */
+    font-size: 12px;
+    text-align: center;
+    border-radius: 6px;
+    height: 24px;
+    width: 58px;
+   }
+   .grid-item2 {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgb(215 206 206 / 80%);
+    /* / padding: 0px; / */
+    font-size: 12px;
+    text-align: center;
+    border-radius: 6px;
+    height: 24px;
+    width: 55px;
+    background-color: #0a84b7;
+    color: white;
+    text-align: center;
+   }
+   .grid-item3 {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgb(215 206 206 / 80%);
+    /* / padding: 0px; / */
+    font-size: 12px;
+    text-align: center;
+    border-radius: 6px;
+    height: 24px;
+    width: 55px;
+    background-color: #dff1f9;
+    color: black;
+    text-align: center;
+   }
+   .pickupAddress{
+    margin-top: 81px;
+    font-weight: bold;
+    margin-left: 16px;
+    margin-bottom: 4px;
+   }
+   .inputField{
+    width: 95%;
+    margin: auto;
+    border: 1px solid #dbd1d1;
+    border-radius: 4px;
+    height: 39px;
+   }
+   .underlineInputField{
+    width: 100%;
+    margin-left: 14px;
+    font-size: 13px;
+    font-weight: 00;
+    color: #a19e9e;
+   }
+   .mobilePhone{
+    margin-top: 81px;
+    font-weight: bold;
+    margin-left: 16px;
+    margin-bottom: 4px;
+   }
+   .inputField1{
+    width: 44%;
+    border: 1px solid #dbd1d1;
+    border-radius: 4px;
+    height: 25px;
+    margin-left: 16px;
+    padding: 7px;
+    font-weight: bold;
+    margin-bottom: 20px;
+   }
+   .mobileAndEmail{
+          display: flex;
+   }
+   .mobilePhone1{
+    margin-top: 81px;
+    font-weight: bold;
+    margin-left: 172px;
+    margin-bottom: 4px;
+   }
+   .inputfield12{
+    width: 44%;
+    border: 1px solid #dbd1d1;
+    border-radius: 4px;
+    height: 25px;
+    margin-left: 16px;
+    padding: 7px;
+    color: gray;
+   }
+   .footer{
+    border: 1px solid white;
+    width: 48%;
+    margin: auto;
+    border-radius: 3px;
+    height: 76px;
+    background-color: white;
+   }
+   .saveBtn{
+    padding: 29px;
+    text-align: right;
+    margin: auto;
+    width: 69%;
+    border: 1px solid #dddbdb;
+    border-radius: 4px;
+   }
+   .btn{
+    background-color: #f3ab26;
+    color: white;
+    border: 1px white;
+    border-radius: 4px;
+    height: 29px;
+   }
