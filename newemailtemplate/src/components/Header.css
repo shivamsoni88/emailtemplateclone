@@ -38,7 +38,18 @@
         .abcd{
             background-color: #fdfdfd;
         }
-        @media only screen and (max-width: 425px) {
-            
+        @media only screen and (max-width: 1024px) {
+            .header{
+                display: flex;
+                width: 100%;
+                margin: auto;
+                margin-top: 12px;
+                justify-content: space-around;
+            }
+                                   
+            .abcd{
+                width: 68%;
+                margin: auto;
+            }
         }
         
