@@ -1,8 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import Citytour from "./Citytour";
 import "./Header.css";
 
-const header = () => {
+const Header = () => {
+  const [toggle, setToggle] = useState(false);
+  function myFunction() {
+    // console.log("Hello");
+    setToggle(!toggle);
+
+    console.log(toggle);
+  }
   return (
     <div>
       <div className="header">
@@ -11,7 +18,22 @@ const header = () => {
           alt="logo"
           className="imgLogo"
         />
-        <button className="signupbtn">sign up</button>
+
+        <div className="topnav" id="myTopnav">
+          <a href="javascript:void(0);" className="icon">
+            <i
+              class="fa fa-bars"
+              style={{ "margin-top": "5px" }}
+              onClick={myFunction}
+            ></i>
+          </a>
+
+          {toggle && (
+            <div>
+              <button className="signupbtn">Sign Up</button>
+            </div>
+          )}
+        </div>
       </div>
 
       <div className="abcd">
@@ -25,4 +47,4 @@ const header = () => {
   );
 };
 
-export default header;
+export default Header;
