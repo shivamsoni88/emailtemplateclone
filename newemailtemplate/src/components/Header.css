@@ -65,6 +65,9 @@
         .abcd{
             background-color: #fdfdfd;
         }
+        .signupbtn1{
+          display: none;
+        }
         @media only screen and (max-width: 1024px) {
             .header{
                 display: flex;
@@ -98,10 +101,10 @@
               width: 100%;
           }
           .signupbtn{
-            /* display: none; */
+            display: none;
           }
         }
-        @media screen and (max-width: 600px) {
+        @media screen and (max-width: 1024px) {
             .topnav a:not(:first-child) {display: none;}
             .topnav a.icon {
               float: right;
@@ -109,7 +112,7 @@
             }
             
           }
-          @media screen and (max-width: 600px) {
+          @media screen and (max-width: 1024px) {
             .topnav.responsive {position: relative;}
             .topnav.responsive a.icon {
               position: absolute;

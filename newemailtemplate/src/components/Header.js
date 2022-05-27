@@ -30,9 +30,10 @@ const Header = () => {
 
           {toggle && (
             <div>
-              <button className="signupbtn">Sign Up</button>
+              <button className="signupbtn1">Sign Up</button>
             </div>
           )}
+          <button className="signupbtn">Sign Up</button>
         </div>
       </div>
 

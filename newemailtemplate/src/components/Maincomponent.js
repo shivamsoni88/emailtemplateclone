@@ -1,13 +1,10 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Calendar from "react-calendar";
 import "./Maincomponent.css";
 import "react-calendar/dist/Calendar.css";
 
 const Maincomponent = () => {
-  const validEmailRegex = RegExp(
-    /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i
-  );
   const arr = [
     "8:00AM",
     "8:30AM",
@@ -30,22 +27,48 @@ const Maincomponent = () => {
   ];
   const [value, onChange] = useState(new Date());
   const [color, setColor] = useState("");
-  const [email, setEmail] = useState("");
-  const [phone, setPhone] = useState("");
+  const initialValues = { email: "", phone: "" };
+  const [formValues, setFormValues] = useState(initialValues);
+  const [formErrors, setFormErrors] = useState({});
+  const [isSubmit, setIsSubmit] = useState(false);
 
   const changeColor = (ele) => {
-    // let element = document.getElementById(k);
     setColor(ele);
-    // style={{ background: color }}
-    // element.style.backgroundColor = color;
   };
 
-  const validationCheck = () => {
-    if (!phone || !email) {
-      alert("Fill all field");
-    }
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormValues({ ...formValues, [name]: value });
   };
-  // email = validEmailRegex.test(value) ? "" : "Email is not valid!";
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setFormErrors(validate(formValues));
+    setIsSubmit(true);
+  };
+  useEffect(() => {
+    console.log(formErrors);
+    if (Object.keys(formErrors).length === 0 && isSubmit) {
+      console.log(formValues);
+    }
+  }, [formErrors]);
+
+  const validate = (values) => {
+    const errors = {};
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
+    const regexphone = /^[+]*[(]{0,1}[0-9]{1,3}[)]{0,1}[-\s\./0-9]*$/g;
+    if (!values.phone) {
+      errors.phone = "phone is required!";
+    } else if (!regexphone.test(values.phone)) {
+      errors.phone = "This is not a valid phone format!";
+    }
+    if (!values.email) {
+      errors.email = "Email is required!";
+    } else if (!regex.test(values.email)) {
+      errors.email = "This is not a valid email format!";
+    }
+
+    return errors;
+  };
 
   return (
     <div className="middleComponent">
@@ -64,7 +87,9 @@ const Maincomponent = () => {
                 return (
                   <div
                     className="grid-item"
-                    style={{ background: ele === color ? "blue" : "white" }}
+                    style={{
+                      background: ele === color ? "#0081ab" : "white",
+                    }}
                     onClick={() => changeColor(ele)}
                   >
                     {ele}
@@ -85,13 +110,14 @@ const Maincomponent = () => {
         <div className="xyz">
           <div className="mobileAndEmail">
             <div className="mobilePhone">Your mobile phone</div>
+            <div className="phonerequired">{formErrors.phone}</div>
             <div>
               <input
                 className="inputField1"
-                onChange={(e) => {
-                  // console.log(e.target.value);
-                  setPhone(e.target.value);
-                }}
+                type="text"
+                name="phone"
+                value={formValues.phone}
+                onChange={handleChange}
               />
             </div>
             <div className="underlineInputField1">
@@ -104,13 +130,14 @@ const Maincomponent = () => {
           <div className="mobileAndEmail">
             {/* <div className="inputField1">+370 688 8545</div> */}
             <div className="mobilePhone1">Your email</div>
+            <div className="emailrequired">{formErrors.email}</div>
             <div>
               <input
                 className="inputfield12"
-                onChange={(e) => {
-                  // console.log(e.target.value);
-                  setEmail(e.target.value);
-                }}
+                type="text"
+                name="email"
+                value={formValues.email}
+                onChange={handleChange}
               />
             </div>
           </div>
@@ -118,7 +145,7 @@ const Maincomponent = () => {
       </div>
       <div className="footer">
         <div className="saveBtn">
-          <button className="btn" onClick={validationCheck}>
+          <button className="btn" onClick={handleSubmit}>
             Save & Book
           </button>
         </div>
